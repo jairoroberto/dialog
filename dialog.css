@@ -35,7 +35,7 @@ dialog {
     text-transform:uppercase;
 }
 
-.btn-abrir-modal:has(:focus, :hover){
+.btn-abrir-modal:is(:focus, :hover){
     background:#000;
     cursor:pointer;
 }
