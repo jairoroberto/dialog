@@ -75,3 +75,16 @@ dialog {
     color: #000;
 }
 
+
+dialog[open] {
+    animation: myFadeIn 0.3s ease normal;
+  }
+
+@keyframes myFadeIn{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
