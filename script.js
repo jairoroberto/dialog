@@ -3,14 +3,16 @@ const modal = document.querySelector('dialog');
 const buttonClose = document.querySelector('dialog button');
 
 
-function growUpModal(){
+function growUpModal(tempo){
     modal.classList.add('height60vh');
+    //console.log(tempo);
+    clearInterval(tempo);
 }
 
 
 btnOpen.onclick = function(){
     modal.showModal();
-    setInterval(growUpModal, 1000);
+    var tempo = setInterval(growUpModal, 1000);
 }
 
 buttonClose.onclick = function(){
@@ -20,6 +22,46 @@ buttonClose.onclick = function(){
 
 const fruits = ['Apple', 'Orange', 'Avocado', 'Banana', 'Lemon', 'Cherry', 'Mango']
 //console.table(fruits);
+
+const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome'
+
+
+
+
+window.addEventListener ('load', async () => {
+    const request = await fetch(urlUF);
+    const response = await request.json();
+
+    formLista(response);
+});
+
+function formLista(response){
+    const est = document.querySelector('#estados');
+    const ulEstados = document.createElement('ul');
+    est.appendChild(ulEstados);
+
+    let contador = 0;
+    response.forEach(function(uf){
+        // const option = document.createElement('option');
+        // const select = document.querySelector('#uf');
+        // select.appendChild(option).innerHTML = `${uf.nome} - ${uf.sigla}`;
+
+        const liEstados = document.createElement('li');
+        contador += 1;
+        ulEstados.appendChild(liEstados).innerHTML = `
+            <i class="ph ph-arrow-right"></i> 
+            ${uf.sigla} - 
+            ${uf.nome} - 
+            ${uf.id} - 
+            ${uf.regiao.sigla} 
+        `;       
+    });
+    //console.log(contador)
+
+    const boxContador =  document.querySelector('#contador');
+    boxContador.innerHTML = `Total de estados: ${contador}`;
+}
+
 
 function createList(){
     const res = document.querySelector('#res');
@@ -52,10 +94,6 @@ function createList(){
 
 const buttonSimple = document.querySelector('.btn-simple');
 buttonSimple.addEventListener('click', createList);
-
-
-
-
 
 
 // for(let i=0; i < arr.length; i++){
