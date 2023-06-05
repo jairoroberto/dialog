@@ -205,3 +205,17 @@ ul{
     margin-top:3rem;
     color:#666;
 }
+
+.badge {
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 3px;
+    margin-left: 1rem;
+    background: #ffff;
+    color: #ccc;
+    font-size: 0.6rem;
+    min-width: 10px;
+    border: 1px solid #ddd;
+}

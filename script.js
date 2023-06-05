@@ -26,8 +26,6 @@ const fruits = ['Apple', 'Orange', 'Avocado', 'Banana', 'Lemon', 'Cherry', 'Mang
 const urlUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome'
 
 
-
-
 window.addEventListener ('load', async () => {
     const request = await fetch(urlUF);
     const response = await request.json();
@@ -53,7 +51,7 @@ function formLista(response){
             ${uf.sigla} - 
             ${uf.nome} - 
             ${uf.id} - 
-            ${uf.regiao.sigla} 
+            <span class='badge'>${uf.regiao.sigla}</span>
         `;       
     });
     //console.log(contador)
