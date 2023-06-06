@@ -1,23 +1,51 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 body{
     font-family: 'Nunito Sans','Nunito', sans-serif;
     font-size:62.5%;
+    
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: 'Nunito', sans-serif;
     font-weight:700;
     margin:0;
-    color: #6900ff;
+    color: #1d1d1f;
 }
 
-h1{
+/* h1{
     display:flex;
     align-items:center;
     font-size:3.4rem;
+} */
+
+.headline {
+    font-size: 48px;
+    line-height: 1.0834933333;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.subhead {
+    font-size: 21px;
+    line-height: 1.1904761905;
+    font-weight: 600;
+    letter-spacing: .011em;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #86868b;
+}
+
+.headline svg{
+    margin-right:0.5rem;
 }
 
 .mb-2{
     margin-bottom: 2rem;
+    max-width: 70%;
 }
 
 .container{
