@@ -50,8 +50,8 @@ function formLista(response){
             <i class="ph ph-arrow-right"></i> 
             ${uf.sigla} - 
             ${uf.nome} - 
-            ${uf.id} - 
-            <span class='badge'>${uf.regiao.sigla}</span>
+            ${uf.id} 
+            <span class='badge'><i class="ph ph-navigation-arrow"></i> ${uf.regiao.sigla}</span>
         `;       
     });
     //console.log(contador)
